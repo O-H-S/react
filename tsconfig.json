@@ -1,0 +1,52 @@
+
+{
+  "compilerOptions": {
+    "outDir": "./dist", //outDir 옵션이 지정되지 않은 경우, TypeScript 컴파일러는 각 .ts 파일을 .js 파일로 컴파일하고, 이를 원본 .ts 파일이 위치한 동일한 디렉토리에 저장합니다. 
+    "target": "ES6", // TypeScript 컴파일러가 생성할 JavaScript 코드의 ECMAScript 버전을 지정 (ES2015 = es6). 구형 브라우저 호환성을 위해서는 es5
+    "skipLibCheck": true,
+    "module": "esnext", // , TypeScript 컴파일러에게 어떤 모듈 시스템을 사용하여 컴파일된 코드를 출력할지 지정. "esnext"는 가장 최신의 ECMAScript 표준을 따르는 모듈 시스템을 사용하라는 의미
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx", // TypeScript 컴파일러에게 JSX 코드를 어떻게 처리할지 지정
+    "jsxImportSource": "@emotion/react", //  Emotion 라이브러리를 통해 스타일을 적용할 수 있도록 해주면서도, 기본적인 React 컴포넌트와 JSX 문법의 사용을 그대로 유지
+    // Emotion의 jsx 함수를 사용하여 JSX 코드를 변환하게 됩니다. 이 설정은 React의 JSX 변환과 호환되도록 설계되어 있으므로, React 컴포넌트와 JSX 문법을 그대로 사용할 수 있습니다.
+    "allowJs": true,
+    "baseUrl": ".", // "." 설정은 현재 tsconfig.json 파일이 위치한 디렉토리를 기준으로 모듈을 해석하겠다는 것을 의미(기본값은 undefined). 더 간편하게 import 지정가능.
+    // 프로젝트 어디서든 동일한 경로로 다른 모듈을 임포트할 수 있게 됩니다. (원래라면, 각 파일의 위치에 따라 상대 경로로 대상 모듈을 지정해야함.)
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/components/page/*"],
+      "@router/*": ["./src/router/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@api/*": ["./src/api/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@store/*": ["./src/store/*"],
+      "@type/*": ["./src/types/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@styles/*": ["./src/styles/*"]
+    },
+    
+    
+    "allowSyntheticDefaultImports": true,
+    
+    
+    //--- CRA 기본 설정.---
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    //---
+    
+  },
+
+  //
+  "exclude": ["node_modules"],
+  //"include": ["src"]
+  "include": ["**/*.ts", "**/*.tsx", "craco.config.js"]
+}

@@ -1,0 +1,30 @@
+{
+    "favorites.resources": [
+        {
+            "filePath": "src\\api",
+            "group": "Default"
+        },
+        {
+            "filePath": "src\\hooks",
+            "group": "Default"
+        },
+        {
+            "filePath": "src\\types",
+            "group": "Default"
+        },
+        {
+            "filePath": "src\\store",
+            "group": "Default"
+        },
+        {
+            "filePath": "tsconfig.json",
+            "group": "Default"
+        }
+    ],
+    "favorites.groups": [
+        "Default",
+        "훅"
+    ],
+    "favorites.currentGroup": "Default",
+    "favorites.sortOrder": "ASC"
+}
